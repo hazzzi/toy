@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DDL Extraction</title>
+	</head>
+	<body>
+		<header>
+			<h3>DDL 쿼리 추출기</h3>
+			<p>* 사용 방법 *</p>
+			<p>아래와 같은 ddl 쿼리가 있을때 파란 점순 부분만 복사해서 붙여넣기하면됨</p>
+			<p>excel에 이름, 데이터타입, null 여부 붙여넣기 할때 걍 편하게 하려고 만듬</p>
+			<div style="margin: 8px">
+        <p>CREATE TABLE table (</p>
+        <div style="border: 1px dashed cornflowerblue">
+          <p>id int8 NOT NULL,</p>
+          <p>title varchar(512) NULL,</p>
+          <p>createtimestamp timestamp NOT NULL,</p>
+        </div>
+				<p>);</p>
+			</div>
+		</header>
+		<article>
+      <div style="display: flex; padding: 8px">
+        <textarea id="textArea" rows="15" cols="70"></textarea>
+        <button id="transButton">ddl extraction 시작</button>
+      </div>
+
+      <h4>결과</h4>
+      <div style="display: flex; justify-content: space-between;padding: 8px">
+        <div>
+          <b>이름</b>
+          <div id="columnNames" style="white-space: pre-line; margin: 16px"></div>
+        </div>
+        <div>
+          <b>Not Null</b>
+          <div id="notNullList" style="white-space: pre-line; margin: 16px"></div>
+        </div>
+        <div>
+          <b>데이터 타입</b>
+          <div id="dataTypes" style="white-space: pre-line; margin: 16px"></div>
+        </div>
+			</div>
+		</article>
+
+		<script type="text/javascript" src="./ddl_extraction.js"></script>
+	</body>
+</html>
